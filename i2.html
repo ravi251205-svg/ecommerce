@@ -1,0 +1,159 @@
+<!DOCTYPE html><html>
+<head>
+<title>My E-Commerce Store</title><style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+nav{
+background:#111;
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header{
+text-align:center;
+padding:40px;
+background:#0077ff;
+color:white;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:180px;
+height:180px;
+}
+
+.price{
+color:green;
+font-weight:bold;
+font-size:18px;
+}
+
+.desc{
+font-size:14px;
+color:#555;
+}
+
+button{
+padding:8px 12px;
+margin:5px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.add{
+background:#007bff;
+color:white;
+}
+
+.buy{
+background:#28a745;
+color:white;
+}
+
+.cart{
+position:fixed;
+right:20px;
+top:80px;
+background:white;
+padding:15px;
+width:200px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+</style></head><body><nav>
+<h2>MyStore</h2>
+</nav><header>
+<h1>Welcome to My E-Commerce Store</h1>
+</header><div class="cart">
+<h3>Cart</h3>
+<ul id="cartItems"></ul>
+<p>Total: ₹<span id="total">0</span></p>
+</div><div class="products"><div class="card">
+<img src="laptop.jpg">
+<h3>Laptop</h3>
+<p class="price">₹55000</p>
+<p class="desc">High performance laptop with 8GB RAM and 512GB SSD.</p>
+<button class="add" onclick="addToCart('Laptop',55000)">Add to Cart</button>
+<button class="buy" onclick="buyNow()">Buy</button>
+</div><div class="card">
+<img src="watch.jpg">
+<h3>Smart Watch</h3>
+<p class="price">₹2500</p>
+<p class="desc">Fitness tracking smart watch with heart rate monitor.</p>
+<button class="add" onclick="addToCart('Smart Watch',2500)">Add to Cart</button>
+<button class="buy" onclick="buyNow()">Buy</button>
+</div><div class="card">
+<img src="headphone.jpg">
+<h3>Headphones</h3>
+<p class="price">₹1200</p>
+<p class="desc">High quality headphones with clear sound.</p>
+<button class="add" onclick="addToCart('Headphones',1200)">Add to Cart</button>
+<button class="buy" onclick="buyNow()">Buy</button>
+</div><div class="card">
+<img src="bag.jpg">
+<h3>Laptop Backpack</h3>
+<p class="price">₹1200</p>
+<p class="desc">Durable water resistant backpack for laptop and books.</p>
+<button class="add" onclick="addToCart('Backpack',1200)">Add to Cart</button>
+<button class="buy" onclick="buyNow()">Buy</button>
+</div><div class="card">
+<img src="speaker.jpg">
+<h3>Bluetooth Speaker</h3>
+<p class="price">₹1800</p>
+<p class="desc">Portable Bluetooth speaker with powerful sound.</p>
+<button class="add" onclick="addToCart('Speaker',1800)">Add to Cart</button>
+<button class="buy" onclick="buyNow()">Buy</button>
+</div><div class="card">
+<img src="mouse.jpg">
+<h3>Gaming Mouse</h3>
+<p class="price">₹900</p>
+<p class="desc">High precision gaming mouse with RGB lighting.</p>
+<button class="add" onclick="addToCart('Mouse',900)">Add to Cart</button>
+<button class="buy" onclick="buyNow()">Buy</button>
+</div></div><script>
+
+let total = 0;
+
+function addToCart(name,price){
+
+let li = document.createElement("li");
+li.textContent = name + " - ₹" + price;
+
+document.getElementById("cartItems").appendChild(li);
+
+total += price;
+
+document.getElementById("total").innerText = total;
+
+}
+
+function buyNow(){
+alert("Order placed successfully!");
+}
+
+</script></body>
+</html>
